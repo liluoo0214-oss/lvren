@@ -1,0 +1,92 @@
+{
+    "@platforms" : [ "iphone", "ipad", "android" ],
+    "id" : "H570C9F66",
+    "name" : "旅人",
+    "version" : {
+        "name" : "1.0.0",
+        "code" : "100"
+    },
+    "description" : "宏大叙事文字冒险",
+    "launch_path" : "index.html",
+    "icons" : {
+        "72" : "media/icon-72.png",
+        "120" : "media/icon-120.png",
+        "144" : "media/icon-144.png",
+        "192" : "media/icon-192.png",
+        "512" : "media/icon-512.png"
+    },
+    "developer" : {
+        "name" : "世盐&拣栖"
+    },
+    "permissions" : {
+        "Audio" : {
+            "description" : "播放背景音乐"
+        }
+    },
+    "plus" : {
+        "splashscreen" : {
+            "autoclose" : true,
+            "waiting" : false
+        },
+        "statusbar" : {
+            "immersed" : false
+        },
+        "distribute" : {
+            "google" : {
+                "packagename" : "",
+                "keystore" : "",
+                "aliasname" : "",
+                "password" : "",
+                "aliaspassword" : "",
+                "abid" : "",
+                "permissionExternalStorage" : {
+                    "request" : "once",
+                    "prompt" : "需要存储权限以保存游戏数据"
+                }
+            },
+            "apple" : {},
+            "plugins" : {
+                "audio" : {
+                    "mp3" : {
+                        "description" : "背景音乐播放"
+                    }
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "ios" : {
+                "dSYMs" : false
+            }
+        }
+    }
+}
