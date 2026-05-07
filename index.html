@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>旅人 · 圣经宏大叙事文字冒险</title>
-<link rel="manifest" href="media/manifest.json">
+<link rel="manifest" href="圣约之家_media/manifest.json">
 <meta name="theme-color" content="#1a1205">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="创世奇旅">
-<link rel="apple-touch-icon" href="media/icon-192.png">
+<link rel="apple-touch-icon" href="圣约之家_media/icon-192.png">
 <style>
 /* ══════════════════════════════════════
    创世奇旅 — 圣经宏大叙事文字冒险
@@ -987,6 +987,75 @@ html, body {
   .verse-card-grid { grid-template-columns: 1fr; }
   .cover-links { flex-direction: column; align-items: center; }
 }
+
+/* ═══ Deuteronomy Postscript — Solemn Golden Scroll ═══ */
+.ps-screen {
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 48px 24px;
+  position: relative;
+  animation: parchmentUnroll 0.8s ease;
+}
+.ps-screen::before {
+  content: '';
+  position: absolute;
+  top: 30%; left: 50%; transform: translate(-50%, -50%);
+  width: 300px; height: 300px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  animation: spotlightPulse 4s ease-in-out infinite;
+}
+.ps-text {
+  font-size: 20px; color: #c9a84c;
+  font-family: var(--font-display);
+  line-height: 2.4; letter-spacing: 0.06em;
+  max-width: 480px; margin: 0 auto;
+  position: relative; z-index: 1;
+  animation: psFadeIn 1.4s ease forwards;
+  text-shadow: 0 0 40px rgba(201,168,76,0.2);
+}
+@keyframes psFadeIn {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.ps-ref {
+  font-size: 13px; color: #8a7040;
+  font-style: italic; margin-top: 16px;
+  font-family: var(--font-display);
+  position: relative; z-index: 1;
+  opacity: 0; animation: psFadeIn 1.2s ease 0.8s forwards;
+}
+.ps-wait {
+  font-size: 16px; color: #a08550;
+  font-family: var(--font-display);
+  line-height: 2.2; letter-spacing: 0.08em;
+  max-width: 400px; margin: 0 auto;
+  position: relative; z-index: 1;
+  opacity: 0; animation: psFadeIn 2s ease 1.5s forwards;
+}
+.ps-dot {
+  display: inline-block; font-size: 24px; color: #c9a84c;
+  opacity: 0.3; margin-top: 20px;
+  animation: psPulse 2s ease-in-out infinite;
+  position: relative; z-index: 1;
+}
+@keyframes psPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.7; }
+}
+.ps-final {
+  font-size: 14px; color: #e8d5b7;
+  font-family: var(--font-display);
+  margin-top: 48px; opacity: 0;
+  animation: psFadeIn 1.6s ease 2s forwards;
+  position: relative; z-index: 1;
+  letter-spacing: 0.04em;
+}
+.ps-final small {
+  font-size: 12px; color: #b8a080; display: block;
+  margin-top: 8px; font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -1571,7 +1640,7 @@ s9_6: {
   { id:8, title:'坑与宝座', start:'s8_1' },
   { id:9, title:'末了的话', start:'s9_1' }
 ],
-    imgMap: { 1:'media/creation.png', 2:'media/fall.png', 3:'media/ark.png', 4:'media/babel.png', 5:'media/stars.png', 6:'media/isaac.png', 7:'media/ladder.png', 8:'media/joseph.png', 9:'media/blessing.png' },
+    imgMap: { 1:'圣约之家_media/creation.png', 2:'圣约之家_media/fall.png', 3:'圣约之家_media/ark.png', 4:'圣约之家_media/babel.png', 5:'圣约之家_media/stars.png', 6:'圣约之家_media/isaac.png', 7:'圣约之家_media/ladder.png', 8:'圣约之家_media/joseph.png', 9:'圣约之家_media/blessing.png' },
     bgmMap: {
   // Chapters 1-5, 7: Expressive Violin — dramatic, mysterious
   'violin': [1,2,3,4,5,7],
@@ -1665,7 +1734,7 @@ s3_1: {
 
 s3_2: {
   ch:3, chName:'第三章 · 十灾降临', prog:0.28, effect:'embers',
-  img: 'media/exodus_darkness.png',
+  img: '圣约之家_media/exodus_darkness.png',
   narrative: '灾难并非一场接一场的"自然灾害"——这是一场属灵战争。耶和华正在逐一击打埃及的众神，向法老和全世界宣告：唯有他才是神。\n\n第一灾，水变血。摩西举起杖，击打尼罗河的水——整条河变成了血。埃及人站在岸边，看见他们的生命线变成了腥臭的红色。鱼翻着白肚浮上水面，空气里全是腐烂的恶臭。七天。尼罗河神哈比——埃及人拜了数千年的生命之神——在耶和华的杖下，死了。\n\n第二灾，青蛙。青蛙从尼罗河里涌上来——不是几只，是数以百万计。它们跳进法老的宫殿、跳上他的卧榻、爬进炉灶和抟面盆。埃及人每走一步都踩到青蛙。生育女神赫克特——那尊蛙头女神，埃及人认为她掌管生育——现在成了全地的恶心。\n\n第三灾，虱子。亚伦伸杖击打地上的尘土，埃及遍地的尘土都变成了虱子。行法术的也想照样行——却站立不住了。"这是神的手段！"他们对法老说。土地之神盖布，被自己领土上的爬虫埋葬。\n\n从第四灾起，神开始"分别"。蝇灾铺天盖地而来——但歌珊地，没有一只苍蝇。从此，"分别"成了出埃及记的核心主题：属神的人与属世界的，被一条看不见的线分开了。\n\n第五灾，牲畜瘟疫。埃及的牛群、马群、驴群、骆驼群、羊群——全部倒毙在田间。牛神阿匹斯、母牛神哈索尔——瘫在粪堆里。\n\n第六灾，疮灾。摩西向天扬起炉灰——全埃及的人和牲畜身上都起了泡疮。医治之神伊姆霍特普——他自己也需要医治。\n\n第七灾，冰雹与火搀杂。摩西向天伸杖——雷声炸响，冰雹夹着火从天上砸下来。田间所有的人畜、树木、菜蔬都被击打。天空之神努特——被贯穿。唯有歌珊地，安静如初。\n\n第八灾，蝗虫。摩西伸杖——东风把蝗虫刮来。遮天蔽日，地上都黑暗了。它们吃尽冰雹所剩的、田间所长的一切。丰收之神奥西里斯——被吃到颗粒无存。\n\n第九灾，黑暗。摩西向天伸杖——埃及遍地乌黑了三天。不是普通的黑夜——是"人可以摸得到的黑暗"。太阳神拉——埃及万神殿的至高神——熄灭了。全埃及人三天不能相见，不敢离开原位。唯独以色列人家中有亮光。\n\n法老的心，一次比一次刚硬。不是一开始就刚硬——法老先自己硬心七次，神才"任凭"他再硬心五次。这是神任凭人走向自己选择的结局。\n\n法老的让步一步步升级：①在埃及地献祭 ②不远去 ③只男丁去 ④留牲畜 ⑤全去但要祝福我。每一步都像魔鬼的伎俩——"可以，但是……"不完全的释放，从来不是真正的释放。',
   choices: [
     { text: '继续看下去——最后一灾要来了。', cons: '九灾过去了。埃及的经济崩溃了。宗教体系被打翻了。法老的尊严被剥得一丝不挂。但法老还是不肯放手。他知道——妥协就是承认耶和华是神。他不能。他是太阳神拉的儿子。他怎么能向一个奴隶民族的"神"低头？\n\n但最后一灾，将要击中埃及最核心的地方。不是尼罗河，不是太阳，不是牲畜——是埃及每一个家庭的长子。包括法老自己的王位继承人。那夜，死亡天使的翅膀将在埃及上空展开。但以色列人将有一个记号——不是他们的善行，不是他们的虔诚，不是他们的受苦——是一扇涂着血的木门。', verse: '出埃及记 7:5 — 我伸手攻击埃及，将以色列人从他们中间领出来的时候，埃及人就要知道我是耶和华。', next: 'conn_3_4' },
@@ -1683,7 +1752,7 @@ conn_3_4: {
 
 s4_1: {
   ch:4, chName:'第四章 · 逾越之夜', prog:0.34, effect:'embers',
-  img: 'media/exodus_passover.png',
+  img: '圣约之家_media/exodus_passover.png',
   narrative: '耶和华在埃及地对摩西和亚伦说："你们要以本月为正月，为一年之首。"\n\n一个新的纪元要开始了。不是埃及的太阳历（天狼星偕日升的七月），而是亚笔月——春分后第一个新月。出埃及是神百姓新的开始，日历从零重置。人只有与神恢复正常关系，生命的日子在神眼中才有永恒价值。\n\n"本月初十日，各人要按着父家取羊羔——一家一只。要无残疾、一岁的公羊羔。要留到本月十四日，在黄昏的时候，以色列全会众把羊羔宰了。"\n\n无残疾——对应基督无瑕疵、无玷污。一岁——正值盛年。留四天——检验。黄昏的时候——直译"两个黄昏之间"，基督于申初断气。\n\n"各家要取点血，涂在吃羊羔的房屋左右的门框上和门楣上。"\n\n那个下午，歌珊地的空气凝住了。你看见父亲们牵着羊羔回家——孩子们抱着羊的脖子。四天了，这羊和他们住在一起，吃在一起。现在，它要被宰杀。\n\n黄昏。刀落下。\n\n你把牛膝草蘸进盆里的血——还是温热的。打在门楣上。左门框。右门框。一下，两下，三下。血在木头上蔓延开来。\n\n那夜，全以色列人在紧闭的门后，吃烤羊羔的肉，连同无酵饼和苦菜。烤了吃——不可生吃，不可水煮。无酵饼——离罪的决绝。苦菜——罪的滋味，是苦的。腰间束带、脚上穿鞋、手中拿杖——赶紧地吃。这顿饭的姿势，是随时预备出发的姿势。\n\n而外面——全埃及，正陷入一种憋着呼吸的寂静。',
   choices: [
     { text: '把羔羊的血涂在门框上。', cons: '你把手浸入盆中的血——还是温热的。羔羊的身体躺在旁边，刚刚断气。你用牛膝草蘸了血，打在门楣和左右的门框上。一下。两下。三下。血在木头上蔓延开来。\n\n那一刻你忽然明白了——审判与否，全在于这只无残疾的羊羔。神说："我一见这血，就越过你们去。"神不看房屋大小，不看里面的人是谁，不看他们的虔诚程度——神只看门框上有没有血。\n\n信心好比那一把牛膝草——将神的应许归到我们身上。你的一切善行在这血面前都不值一提。但只要有血，你就安全了。\n\n门外，死亡天使正穿过埃及的街道。', verse: '出埃及记 12:7 — 各家要取点血，涂在吃羊羔的房屋左右的门框上和门楣上。', next: 's4_2' },
@@ -1710,7 +1779,7 @@ conn_4_5: {
 
 s5_1: {
   ch:5, chName:'第五章 · 过红海', prog:0.47, effect:'ripple',
-  img: 'media/exodus_redsea.png',
+  img: '圣约之家_media/exodus_redsea.png',
   narrative: '天边扬起沙尘——不是风沙，是车轮。\n\n六百辆特选的战车，加上埃及所有的战车，每辆都有精锐战士。法老亲自领军——他后悔了。"我们容以色列人去，不再服事我们，这做的是什么事呢？"\n\n以色列人举目看见埃及人赶来——就甚惧怕，向耶和华哀求。两百万人的营地变成了一锅沸腾的恐惧。\n\n他们转向摩西——声音里满是怨毒："难道在埃及没有坟地，你把我们带来死在旷野吗？我们在埃及岂没有对你说过——不要搅扰我们，容我们服事埃及人吗？服事埃及人比死在旷野还好！"\n\n人就是这样——一遇难处就美化过去的奴役生活。只记得埃及的肉锅，不记得埃及的鞭子。\n\n摩西站在咆哮的人群面前，他的声音穿透了恐惧——\n\n"不要惧怕，只管站住！看耶和华今天向你们所要施行的救恩。你们今天所看见的埃及人，必永远不再看见了。"\n\n"耶和华必为你们争战；你们只管静默，不要作声。"\n\n前有红海，后有追兵。左右都是旷野。这是绝境——神特意把他们领到的绝境。因为只有在绝境中，人才能学会"站住"和"看"。不是看自己。不是看敌人。是看神。站住不是消极——是信心的最高姿势。',
   choices: [
     { text: '不要作声——看着神的救恩。', cons: '你闭上嘴。不再抱怨。不再哀求。只是站着。看着。摩西向海伸杖。\n\n大东风吹了一整夜。你听见风声呼呼地响——不是寻常的风。是创造天地的灵运行在水面上。海浪在黑暗中分开。你无法用言语解释这一刻——但你知道，正在发生的事超越了物理法则。创造宇宙的神正在为他的百姓开辟一条不可能的路。\n\n神说："你吩咐以色列人往前走。"往前——不是绕路，不是等待，是走进刚刚分开的海。信心的一步。人若走在尽本分的路上，即使前路看似不可能，也要往前走。往前——走进红海。', verse: '出埃及记 14:13-14 — 摩西对百姓说："不要惧怕，只管站住！看耶和华今天向你们所要施行的救恩……耶和华必为你们争战；你们只管静默，不要作声。"', next: 's5_2' },
@@ -1746,7 +1815,7 @@ conn_5_6: {
 
 s6_1: {
   ch:6, chName:'第六章 · 旷野试炼', prog:0.62, effect:null,
-  img: 'media/exodus_manna.png',
+  img: '圣约之家_media/exodus_manna.png',
   narrative: '出埃及后第二个月十五日——百姓的粮食吃完了。\n\n两百万人站在荒漠里。粮袋空了。\n\n"巴不得我们早死在埃及地耶和华的手下！那时我们坐在肉锅旁边，吃得饱足——你们将我们领出来，到这旷野，是要叫这全会众都饿死啊！"\n\n肉锅——这是他们最深的记忆。埃及的肉锅。不是埃及的鞭子，不是埃及的苦工，不是埃及的杀婴令。是肉锅。人就是这样：在苦难中，记忆像筛子一样，只留下"美好的过去"，滤掉罪的代价。\n\n但耶和华不像法老——他不鞭打，他供应。\n\n"我要将粮食从天降给你们。百姓可以出去，每天收每天的分，我好试验他们遵不遵我的法度。"\n\n早晨——野地出现了一个小圆物，细小如白霜。铺满地面。\n\n"这是什么？"——吗哪，在希伯来文里就是"这是什么"。\n\n摩西说："这就是耶和华给你们吃的食物——从天上来的粮食。"\n\n滋味像掺了蜜的薄饼。颜色是白的，样子像芫荽子。每天早晨，按着各人的饭量收取。第六天收双份——第七天是安息日。多的不会剩，少的不会缺——属天的供应由神量给各人。',
   choices: [
     { text: '弯腰拾起地上的吗哪。', cons: '那些洁白的小圆片在晨光中微微发亮。你拿起一片放入口中——甜的。像蜂蜜掺在薄饼里。\n\n每天早晨你醒来，昨日留下的吗哪已经生虫变臭了。但新一天的吗哪总是准时出现——从不多余，从不迟到。有多收的，有少收的；及至用量器一量，多收的也没有余，少收的也没有缺。每个家庭刚好够——不是按人的贪心，是按神的量定。\n\n四十年，一直如此。在旷野你学会了一件事：不是依靠积蓄，而是每一天仰望供应。耶稣后来指着说："我是从天上降下来的生命粮。"吗哪是影子——基督才是真粮。', verse: '出埃及记 16:4 — 耶和华对摩西说："我要将粮食从天降给你们。百姓可以出去，每天收每天的分，我好试验他们遵不遵我的法度。"', next: 's6_2' },
@@ -1782,7 +1851,7 @@ conn_6_7: {
 
 s7_1: {
   ch:7, chName:'第七章 · 西奈之约', prog:0.72, effect:'embers',
-  img: 'media/exodus_sinai.png',
+  img: '圣约之家_media/exodus_sinai.png',
   narrative: '以色列人出埃及地以后，满了三个月的那一天——\n\n他们来到西奈的旷野，在山下安营。\n\n耶和华从山上呼唤摩西说："你要这样告诉雅各家，晓谕以色列人：我向埃及人所行的事，你们都看见了——且看见我如鹰将你们背在翅膀上，带来归我。"\n\n"如鹰背在翅膀上"——鹰带小鹰飞行，若有箭射来，先射透老鹰，才伤得着小鹰。不是强迫，是背负。不是奴役，是托住。在先前的三个月里——十灾、逾越节、过红海——神已经证明了他不是在奴役他们，而是在背负他们。\n\n"如今你们若实在听从我的话，遵守我的约，就要在万民中作属我的子民。你们要归我作祭司的国度，为圣洁的国民。"\n\n百姓同声回答："凡耶和华所说的，我们都要遵行。"\n\n到了第三天早晨——\n\n山上有雷轰、闪电和密云。角声拖得很长——越来越大，越来越响，穿透骨髓。营中的百姓尽都发颤。\n\n西奈全山冒烟——因为耶和华在火中降于山上。山的烟气上腾，如烧窑一般。遍山大大地震动。整个山都在抖。岩石在抖。百姓的腿在抖。\n\n这不是恐吓——这是让人认识三件事：神的圣洁不可轻慢；律法不是建议，是烈火；人不能直接就近神——需要一位中保。',
   choices: [
     { text: '站在山脚下，仰望那冒烟的山。', cons: '你从未见过这样的景象。山在燃烧却不被烧毁——正如当初那荆棘。遍山震动，仿佛创造主亲自踏足这地。雷声、闪电、角声混杂在一起，你分不清哪个是自然现象，哪个是神的声音。\n\n但这恐惧不同于埃及的恐惧——埃及的恐惧是压迫，这里的恐惧是敬畏。你不是怕被击杀——你是被圣洁的存在本身所覆盖。\n\n"神降临是要试验你们，叫你们时常敬畏他，不致犯罪。"敬畏那位说话的神——那位"如鹰将你们背在翅膀上，带来归我"的神。不是先给律法再拯救——先拯救（"将你从埃及领出来"），再给律法。律法不是得救的途径，而是蒙恩之人的生活规范。这个顺序，是一切的关键。', verse: '出埃及记 19:18 — 西奈全山冒烟，因为耶和华在火中降于山上。山的烟气上腾，如烧窑一般，遍山大大地震动。', next: 's7_2' },
@@ -1818,7 +1887,7 @@ conn_7_8: {
 
 s8_1: {
   ch:8, chName:'第八章 · 金牛犊', prog:0.84, effect:'embers',
-  img: 'media/exodus_goldencalf.png',
+  img: '圣约之家_media/exodus_goldencalf.png',
   narrative: '百姓见摩西迟延不下山，就聚集到亚伦那里——\n\n"起来！为我们做神像，可以在我们前面引路。因为领我们出埃及地的那个摩西，我们不知道他遭了什么事。"\n\n"那个摩西"——多么刺耳。救主迟迟不归，人心就开始胡乱猜疑。"主耶稣上了荣耀的山，为我们的缘故来到神面前，并非肉眼可见。那恶仆心里说：我的主人必来得迟。"\n\n刚刚还在西奈山下起誓"凡耶和华所说的我们都必遵行"的百姓，现在要一个金牛犊。\n\n亚伦——摩西的哥哥——屈服了。\n\n"你们去摘下你们妻子、儿女耳上的金环，拿来给我。"\n\n百姓就都摘下耳上的金环。那些金子——是出埃及时埃及人塞给他们的——他们把它变成了一个偶像。\n\n亚伦铸了一只牛犊，说："以色列啊，这是领你出埃及地的神！"\n\n亚伦在牛犊面前筑坛，宣告说："明日要向耶和华守节。"\n\n把拜金牛犊当作敬拜耶和华——最可怕的偶像不是假神，而是用人的方式来"敬拜"真神。许多人自称信神，但敬拜的其实是心中的金牛犊——一个符合自己想象和需要的偶像。',
   choices: [
     { text: '你怎么能——他们刚刚才看见红海分开啊！', cons: '你的手在发抖。不是恐惧——是愤怒和心碎。红海的水珠还挂在记忆里，西奈山的火焰还映在瞳孔中，立约的血还干在衣襟上——他们就造了一个牛犊？何等快快的偏离。"等不多时，他们就忘了他的作为。"人若刚刚重申与神立约，刚刚领受他的特别怜悯，却又踏足罪恶——那是极大的冒犯。\n\n这就是人心最黑暗的真相：我们不是在信心中苦苦挣扎——我们是在信心中随时随地准备叛逃。亚伦见众人喜欢这牛犊，就更想讨好他们。神若置之不理，再好的人也不过如此——所以休要倚靠世人。自己以为站得稳的，须要谨慎，免得跌倒。', verse: '出埃及记 32:4 — 亚伦从他们手里接过来，铸了一只牛犊，用雕刻的器具做成。他们就说："以色列啊，这是领你出埃及地的神！"', next: 's8_2' },
@@ -1828,7 +1897,7 @@ s8_1: {
 
 s8_2: {
   ch:8, chName:'第八章 · 金牛犊', prog:0.88, effect:'embers',
-  img: 'media/exodus_moses_shine.png',
+  img: '圣约之家_media/exodus_moses_shine.png',
   narrative: '耶和华吩咐摩西说："下去吧，因为你的百姓——就是你从埃及地领出来的——已经败坏了。他们快快偏离了我所吩咐的道，为自己铸了一只牛犊，向它下拜献祭。"\n\n耶和华又说："我看这百姓真是硬着颈项的百姓。你且由着我，我要向他们发烈怒，将他们灭绝，使你的后裔成为大国。"\n\n这一刻，摩西面临一个选择——接受神的提议，成为新亚伯拉罕？\n\n但他没有。他为百姓代求——\n\n"耶和华啊，你为什么向你的百姓发烈怒呢？这百姓是你用大力和大能的手从埃及地领出来的。为什么使埃及人议论说：\'他领他们出去，是要降祸与他们\'？求你转意，不发你的烈怒，后悔，不降祸与你的百姓。求你记念你的仆人亚伯拉罕、以撒、雅各——你曾指着自己起誓说：我必使你们的后裔像天上的星那样多……"\n\n摩西的代祷有三个根基：①神的拣选（"你的百姓"）；②神的圣名（不让埃及人议论）；③神的应许（记念亚伯拉罕、以撒、雅各）。不看人的光景——不管他们是否悔改，神开始的工作神必完成。\n\n于是耶和华后悔，不把所说的祸降与他的百姓。\n\n摩西转身下山——手里拿着两块法版。这版是两面写的，是神的工作，字是神写的。',
   choices: [
     { text: '跟随摩西下山——手里紧紧攥着法版。', cons: '摩西下山了。还没到营中，就听见了——不是战争的声音，是跳舞唱歌的声音。走近营地——看到了金牛犊。摩西的怒气一发——他把两块法版从手中扔下去，摔碎在山下。\n\n不是失控。这是一个先知用视觉化的方式告诉百姓：你们已经把约摔碎了。法版碎了——约就碎了。这是最震撼的视觉比喻。\n\n然后摩西毁坏了金牛犊——用火焚烧，磨得粉碎，撒在水面上，叫以色列人喝。黄金变苦水。偶像总是如此。\n\n"凡属耶和华的都要到我这里来！"利未人回应了这个呼召。\n\n但最震撼的还在后面。摩西回到耶和华面前，说了一句穿透所有世纪的话："倘或你肯赦免他们的罪……不然，求你从你所写的册上涂抹我的名。"摩西愿意为百姓舍命。这是旧约代祷的最高峰——预表基督"为我弟兄、我骨肉之亲，就是自己被咒诅，与基督分离，我也愿意"。摩西只是愿望——基督是事实。一千五百年后，另一个人真的从生命册上被涂抹了。不是犯罪被抹去——而是以无罪的代替有罪的。十字架上的呼喊"我的神，我的神，为什么离弃我"，就是他名被涂抹的那一刻。', verse: '出埃及记 32:32 — 摩西说："倘或你肯赦免他们的罪……不然，求你从你所写的册上涂抹我的名。"', next: 'conn_8_9' },
@@ -1864,7 +1933,7 @@ s9_2: {
 
 s9_3: {
   ch:9, chName:'第九章 · 会幕建成', prog:0.98, effect:'embers',
-  img: 'media/exodus_tabernacle_glory.png',
+  img: '圣约之家_media/exodus_tabernacle_glory.png',
   narrative: '正月初一日——出埃及后整整一年。\n\n会幕立起来了。\n\n正月初一——圣经中第一个正月初一是洪水水干、审判结束（创8:13）。第二个正月初一是逾越节、得救（出12:2）。现在是第三个正月初一——立会幕，事奉。每一个正月初一都是新起头。从出埃及到立会幕，整整一年——出埃及是新的开始，立会幕是又一个新开始。\n\n摩西照耶和华所吩咐的，把法版放在约柜里，把施恩座放在柜上。把陈设饼摆列在耶和华面前。在耶和华面前点灯。把金香坛安在法柜前。把燔祭坛安在会幕门前。把洗濯盆安在会幕和坛的中间，盆中盛水。\n\n支搭会幕的过程中，七次重复——"是照耶和华所吩咐他的。"\n\n一切完工了。\n\n百姓站在那里，静默无声。\n\n然后——\n\n云彩遮盖会幕。\n\n耶和华的荣光充满了帐幕。\n\n摩西不能进会幕——因为云彩停在其上，耶和华的荣光充满了帐幕。',
   choices: [
     { text: '跪下。神的荣耀在这里。', cons: '你跪下来。不是因为害怕——这不再像西奈山那样令人发抖。这荣光是家的感觉。温暖、明亮的云彩停在会幕上面——不是高高在上，是降下来，是"住在他们中间"。\n\n出埃及记从"丢在河里"的死亡开场——以耶和华荣光充满帐幕的荣耀收尾。从死亡到救赎、到立约、到同在——这是整卷书的弧线，也是每一个信徒的蒙恩轨迹。出埃及记结束在这里——不是以"从此百姓听话"，而是以"神与人同住"。整卷书的最后几个字：耶和华的荣光充满了帐幕。\n\n而从这一刻起，以色列人的行动完全由云彩决定：云彩收上去就起程，云彩停住就安营。"既不落在神的后面，也不抢在神的前面。"——这是旷野旅程的总原则。', verse: '出埃及记 40:34 — 当时，云彩遮盖会幕，耶和华的荣光就充满了帐幕。', next: 'conn_9_end' },
@@ -1892,7 +1961,7 @@ conn_9_end: {
   { id:8, title:'金牛犊', start:'s8_1' },
   { id:9, title:'会幕建成', start:'s9_1' }
 ],
-    imgMap: { 1:'media/exodus_ch1.png', 2:'media/exodus_ch2.png', 3:'media/exodus_ch3.png', 4:'media/exodus_ch4.png', 5:'media/exodus_ch5.png', 6:'media/exodus_ch6.png', 7:'media/exodus_ch7.png', 8:'media/exodus_ch8.png', 9:'media/exodus_ch9.png' },
+    imgMap: { 1:'圣约之家_media/exodus_ch1.png', 2:'圣约之家_media/exodus_ch2.png', 3:'圣约之家_media/exodus_ch3.png', 4:'圣约之家_media/exodus_ch4.png', 5:'圣约之家_media/exodus_ch5.png', 6:'圣约之家_media/exodus_ch6.png', 7:'圣约之家_media/exodus_ch7.png', 8:'圣约之家_media/exodus_ch8.png', 9:'圣约之家_media/exodus_ch9.png' },
     bgmMap: {
   // Chapters 1-5: Expressive Violin — dramatic, mysterious (出埃及/十灾/红海)
   'violin': [1,2,3,4,5],
@@ -2343,7 +2412,7 @@ conn_10_end: {
   { id:9, title:'巴兰', subtitle:'咒诅变成祝福', year:'出埃及后第40年', station:'站42·摩押平原', start:'s9_1' },
   { id:10, title:'摩西的告别', subtitle:'拣选生命', year:'出埃及后第40年', station:'站41→站42', start:'s10_1' }
 ],
-    imgMap: { 1:'media/wilderness_tabernacle.png', 2:'media/wilderness_fire.png', 3:'media/wilderness_atonement.png', 4:'media/wilderness_manna.png', 5:'media/wilderness_spies.png', 6:'media/wilderness_korah.png', 7:'media/wilderness_rock.png', 8:'media/wilderness_serpent.png', 9:'media/wilderness_balaam.png', 10:'media/wilderness_nebo.png' },
+    imgMap: { 1:'圣约之家_media/wilderness_tabernacle.png', 2:'圣约之家_media/wilderness_fire.png', 3:'圣约之家_media/wilderness_atonement.png', 4:'圣约之家_media/wilderness_manna.png', 5:'圣约之家_media/wilderness_spies.png', 6:'圣约之家_media/wilderness_korah.png', 7:'圣约之家_media/wilderness_rock.png', 8:'圣约之家_media/wilderness_serpent.png', 9:'圣约之家_media/wilderness_balaam.png', 10:'圣约之家_media/wilderness_nebo.png' },
     bgmMap: {
   // Chapters 1-3: Violin — holy, solemn (西奈山下，肃穆)
   'violin': [1,2,3,4,9,10],
@@ -2574,12 +2643,110 @@ chapters: [
   { id:8, title:'至圣所', start:'s10_1' },
   { id:9, title:'渴', start:'s11_1' }
 ],
-imgMap: { 1:'media/leviticus_ch1.png', 2:'media/leviticus_ch2.png', 3:'media/leviticus_ch3.png', 4:'media/leviticus_ch4.png', 5:'media/leviticus_ch5.png', 6:'media/leviticus_ch6.png', 7:'media/leviticus_ch7.png', 8:'media/leviticus_ch8.png', 9:'media/leviticus_ch9.png' },
+imgMap: { 1:'圣约之家_media/leviticus_ch1.png', 2:'圣约之家_media/leviticus_ch2.png', 3:'圣约之家_media/leviticus_ch3.png', 4:'圣约之家_media/leviticus_ch4.png', 5:'圣约之家_media/leviticus_ch5.png', 6:'圣约之家_media/leviticus_ch6.png', 7:'圣约之家_media/leviticus_ch7.png', 8:'圣约之家_media/leviticus_ch8.png', 9:'圣约之家_media/leviticus_ch9.png' },
 bgmMap: {
   'violin': [1,2,3,4,5],
   'love': [6,7,8,9]
 }
+},
+
+  deuteronomy: {
+    id: 'deuteronomy', title: '申命奇旅', subtitle: '摩西在摩押平原的告别',
+    endingText: '摩押平原——一百二十岁的摩西说完了。尼波山顶——耶和华亲自埋葬了他。无人知道他的坟墓。但他的应许没有死。',
+    endingVerse: '申命记 34:10 — 以后以色列中再没有兴起先知像摩西的。',
+    scenes: {
+s1_1: {
+  ch:1, chName:'第一章 · 摩押平原', prog:0.02, effect:null,
+  narrative: '摩押平原。约旦河东。\n\n你站在第二代以色列人的中间。你们的父母——那些从埃及出来的成年人——都已经倒毙在旷野里了。你从来没有见过红海分开。你从来没有吃过吗哪的第一天。你对出埃及的全部记忆，是父母在帐篷里的低声讲述。\n\n摩西站在你们面前。一百二十岁。头发全白了。但他的眼睛没有昏花，精神没有衰败。他开口说话——声音像旷野的风，干燥但有力。\n\n"耶和华我们的神，在何烈山与我们立约。这约不是与我们列祖立的，乃是与我们——今日在这里存活之人立的。"\n\n他说"我们"。\n\n你愣了一瞬。你不在何烈山。那是四十年前的事——你还是个没出生的孩子。但摩西说"我们"——好像你也在那里。好像西奈山的雷声和角声也震到你的骨头里了。\n\n摩西停下来。他的眼睛很清澈，但声音里兜着四十年旷野的风沙。他望着你们这些二代民——不是用责备的眼神。是用一种你能感觉到但说不清的眼神。\n\n他说"我们"——不是语法错误。是恩典。\n\n在神的约里，不在场的人也算在内。没看见的人也算看见。你忽然觉得喉咙有点干。',
+  choices: [
+    { text: '"我们"——我明明不在那里。但他把我也算进去了。', cons: '恩典的算法不是按出生日期排的。摩西说"我们"，因为他知道——神立约的对象不是一代人，是一个民族。亚伯拉罕还没出生的时候，神已经应许了。你还没出生的时候，西奈山的约里已经有你的座位。这不是你配得的。这是你被赐予的。你低下头。喉咙还是干。但心上有什么东西松了。', verse: '申命记 5:2-3 — 耶和华我们的神在何烈山与我们立约。这约不是与我们列祖立的，乃是与我们今日在这里存活之人立的。', next: 's2_1' }
+  ]
+},
+
+s2_1: {
+  ch:2, chName:'第二章 · 从何烈山到加低斯', prog:0.12, effect:null,
+  narrative: '摩西的声音抬高了。他不再站着——他开始踱步，手势也跟着话语起伏。\n\n"我们从何烈山起行——走过那大而可怕的旷野——到了加低斯巴尼亚。"\n\n他讲到红海。\n\n"耶和华使海水回流，淹没他们——法老全军、车辆、马兵，一个也没有剩下。"\n\n他说"水在他们的左右作了墙垣"——说到这里，摩西的眼睛亮了一下。他看见了。他亲身站在海底，看见那两堵透明的水壁里游着鱼。他不是在复述历史，他是在回忆。\n\n你听着。你忽然意识到一件从来没有想过的事：对你是经文的事情，对摩西是人生。\n\n他讲到大而可畏的旷野——"有火蛇、蝎子、干旱无水之地"。他没有夸张。他在那里走了四十年。那些地名不是地图上的点——是他脚踩过的沙、搭帐篷过夜的地方、妻子埋怨他、哥哥背叛他、百姓咒骂他。\n\n然后他讲到加低斯巴尼亚。声音沉下去。\n\n"我十二个探子——只有约书亚和迦勒专心跟从耶和华。其余的报恶信。"\n\n他没有提自己。没有提那一日他如何俯伏在地撕裂衣服。但他知道你在想什么。他看着你。他的眼神在说：我知道你们在想"我父母就是那批死掉的人"。\n\n但他什么也没说。继续讲。',
+  choices: [
+    { text: '摩西看到红海分开——那是他亲眼所见。我信的不只是故事，是他所见证的神。', cons: '忽然之间，申命记不一样了。不是干燥的律法书——是一个一百二十岁的老人，站在约旦河边，把他全部的生命揉进每一句话里。他看见水墙耸立的时候，你还没有出生。但他现在告诉你——那一位分开海水的，也是带你们渡过约旦河的那一位。不只是为父辈，也是为你们。你心里的某个关闭多年的门，开了一道缝。', verse: '出埃及记 14:29 — 以色列人却在海中走干地，水在他们的左右作了墙垣。', next: 's3_1' }
+  ]
+},
+
+s3_1: {
+  ch:3, chName:'第三章 · 旷野四十年', prog:0.24, effect:'embers',
+  narrative: '摩西的声音变得低沉。像有人把一块石头压在了琴弦上。\n\n"我领你们在旷野四十年——你们身上的衣服并没有穿破，脚上的鞋也没有穿坏。"\n\n你低头看自己的脚。鞋子——真的没有磨破。你自己都没有注意过这件事。四十年——一双鞋。\n\n但下一句话你不想听。\n\n"耶和华的手攻击他们——从营中除灭他们，直到灭尽。"\n\n他们——你的父母。\n\n神保全了你的鞋，却取走了你的父母。\n\n这两件事怎么能同时存在？你想问——但你没有问出口。你只是看着摩西。摩西也看着你。他看见了你的眼神。他认识这个眼神——四十年前，在加低斯，他自己的脸上也有过。\n\n他没有解释。没有辩护。他只是停了一拍。那一拍很长。然后他继续讲——讲到吗哪，讲到磐石出水，讲到云柱火柱。\n\n你知道他知道你在痛。但有些事，不是用话能说明白的。\n\n你攥紧了拳。然后慢慢松开了。',
+  choices: [
+    { text: '我的鞋没有磨破——但我的父母死在旷野。神，你在想什么？', cons: '这个问题没有干净的答案。至少现在没有。你只知道——摩西自己也在加低斯的水边犯了错。他击打磐石，神对他说"你必不得领这会众进我所赐给他们的地去"。摩西也失去了应许之地。这个老人不是站在岸边审判你的不信——他是和你一起站在岸边，一样过不去约旦河。你抬头看他——他的眼睛还是那么清澈。不是因为他不痛。是因为他走了四十年，学会了不靠理解活着。', verse: '申命记 8:4 — 这四十年，你的衣服没有穿破，你的脚也没有肿。', next: 's4_1' },
+    { text: '沉默。不知道说什么。只是听着。', cons: '有时候，不说比说更有信心。摩西也没有为神辩护。他只是继续讲。旷野四十年——不是浪费。神用四十年的沉默教了一件事：人活着不是单靠食物，乃是靠耶和华口里所出的一切话。你还不完全明白——但你记住了这句话。它会在之后的年日里发酵。', verse: '申命记 8:3 — 他苦炼你，任你饥饿，将你和你列祖所不认识的吗哪赐给你吃。使你知道人活着不是单靠食物，乃是靠耶和华口里所出的一切话。', next: 's4_1' }
+  ]
+},
+
+s4_1: {
+  ch:4, chName:'第四章 · 十诫重申', prog:0.36, effect:null,
+  narrative: '摩西开始讲律法。\n\n不是背诵。是解释。\n\n"当记念安息日，守为圣日。"\n\n他停下来。你们等着他背出其余的诫命——但摩西不背。他讲。\n\n"你也要记念——你在埃及地作过奴仆。耶和华你的神用大能的手和伸出来的膀臂，将你从那里领出来。因此，耶和华你的神吩咐你守安息日。"\n\n摩西的声音忽然柔软了。\n\n有一次——他没有说，但你知道——摩西曾经站在埃及的皇宫阳台上。他是法老女儿的儿子。他往下看，看见希伯来奴隶在泥砖坑里弯着腰。烈日下——没有安息日。没有休息。没有停止。\n\n现在他站在摩押平原，告诉你们：安息日不是规矩。安息日是自由。\n\n"你们在埃及的时候不能安息。现在耶和华给了你们安息。守安息日——是为了记念你们不再是奴隶了。"\n\n这句话沉进你的骨头。你从出生就在旷野里，一直在走。但他说——你已经不是奴隶了。你可以停下来。你被允许停下来。',
+  choices: [
+    { text: '安息日不是规矩——是自由。我从来没有这样想过。', cons: '从小到大，你被教导十诫是一套规则。但摩西的解释完全不同——每一条诫命的背后，不是"你必须"，是"你已经不再是奴隶了"。不可杀人的背后——因为邻舍不是威胁，是弟兄。不可偷盗的背后——因为神会供应。守安息的背后——因为你不需要再用苦工证明存在。你朝摩西看——他曾经是埃及王子，看着他未来的百姓在泥砖坑里不能安息。现在他告诉他们：可以停了。', verse: '申命记 5:15 — 你也要记念你在埃及地作过奴仆。耶和华你神用大能的手和伸出来的膀臂，将你从那里领出来。因此，耶和华你的神吩咐你守安息日。', next: 's5_1' }
+  ]
+},
+
+s5_1: {
+  ch:5, chName:'第五章 · Shema与尽心', prog:0.48, effect:null,
+  narrative: '摩西停下脚步。他面向全部会众，深吸了一口气。\n\n"以色列啊，你要听——耶和华我们神是独一的主。你要尽心、尽性、尽力爱耶和华你的神。"\n\nShema。\n\n摩西的下颌在微微颤抖。这几个字他太重了。每说一个字，就像从四十年的旷野记忆里拔出一根钉子。\n\n然后他转了语气。\n\n"耶和华专爱你们，拣选你们——并非因你们的人数多于别民，原来你们的人数在万民中是最少的。"\n\n最少。\n\n摩西的声音在这里顿了一下。你看见他的眼光飘向了很远的地方——不是约旦河对岸，是更远。\n\n他在想他自己。\n\n四十年前——不，八十年前——在燃烧的荆棘前："我是什么人，竟能去见法老？"逃犯。牧羊人。拙口笨舌。\n\n最少。\n\n摩西一生都是最少的那个人。但现在他站在这成千上万人面前，用"最少"来解释"拣选"。不是因为他们强——正是因为他们是软弱的。\n\n一百二十岁。没有妻子。没有孩子。背上有以色列全会众近百万人的重量。身边只有约书亚。\n\n你们会忘记他的。他知道。\n\n但他还在讲。',
+  choices: [
+    { text: '摩西说"你们是万民中最少的"——他在说他自己。', cons: '你看见了一个从来没有人告诉你的摩西。不是英雄摩西——是那个在米甸旷野里放羊四十年的人。是那个求神打发别人的人。是那个因为一次发怒就不得进应许之地的人。最少。最软弱。最不配。但神拣选了他——不是因为他配，是因为神爱他。你忽然明白了"拣选"的意思。不是你够好。是你被爱了。你坐下来。把脸埋进手里。', verse: '申命记 7:7-8 — 耶和华专爱你们，拣选你们，并非因你们的人数多于别民，原来你们的人数在万民中是最少的。只因耶和华爱你们……', next: 's6_1' },
+    { text: 'Shema——尽心、尽性、尽力。我能做到吗？', cons: '你默念着这几个字：尽心——全心全意。尽性——全部生命。尽力——倾尽所有。你回想自己旷野里的年日——抱怨、怀疑、拜金牛犊、不信。你哪一次是"尽心"的？摩西还没有说完。但你心里已经有了答案：你做不到。但现在你至少知道该怎么活了。方向对了——哪怕走不到。', verse: '申命记 6:4-5 — 以色列啊，你要听。耶和华我们神是独一的主。你要尽心、尽性、尽力爱耶和华你的神。', next: 's6_1' }
+  ]
+},
+
+s6_1: {
+  ch:6, chName:'第六章 · 迦南地的试探', prog:0.60, effect:null,
+  narrative: '摩西的声音恢复了力度。他讲到了迦南地——不是描述风景，是警告。\n\n"你吃得饱足，建造美好的房屋居住——你的牛羊加多，你的金银增添，你所有的全都加增——你就心高气傲，忘记耶和华你的神。"\n\n他停下来。\n\n沉默了很长时间。长到你不能确定他是忘了词，还是故意停在这里。\n\n最后他开口了——\n\n"你要记念耶和华你的神——因为得货财的力量是他给你的。"\n\n但你看见了他开口之前的那个停顿。\n\n那个停顿里，摩西在对自己说话。\n\n他站在尼波山脚下。抬眼看约旦河对岸——看得见迦南。看得见那流奶与蜜之地。四十年的终点就在河那边。但他过不去。\n\n他也可能在想："我带他们到了这里。我的力量。我的领袖才能。我的四十年。"\n\n一百二十岁——还在和骄傲争战。\n\n他说出来的那八个字，先穿透了他自己，才穿透你们。',
+  choices: [
+    { text: '他对自己说"得货财的力量是神给的"——在尼波山脚下。他过不去。', cons: '你忽然觉得喉咙被什么堵住了。不是同情——是敬重。摩西不是站在讲台上慷慨激昂——是跪在自己心里，用铁锤砸断自己最后一丝骄傲。他走了四十年，带了数百万人到门口——然后被拦在门外。如果他死在旷野里还可以怪环境。但他活着——看到了应许之地——然后被留在河东。他说"得货财的力量是神给的"时，是在对自己说：连带你走到这一步的力气，都是恩典。不是你的。从来不是你的。', verse: '申命记 8:17-18 — 恐怕你心里说：这货财是我力量我能力得来的。你要记念耶和华你的神，因为得货财的力量是他给你的。', next: 's7_1' }
+  ]
+},
+
+s7_1: {
+  ch:7, chName:'第七章 · 祝福与咒诅', prog:0.72, effect:null,
+  narrative: '摩西指着远处的两座山。\n\n"看哪——基利心山，以巴路山。"\n\n夕阳正在落下去。两座山在暮色中现出暗蓝色的轮廓——基利心在南，以巴路在北。一座代表祝福。一座代表咒诅。\n\n"我今日将生与死、福与祸陈明在你面前。所以你要拣选生命——使你和你的后裔都得存活。"\n\n摩西的整张脸都被夕阳染成了暗金色。他一字一字地说——\n\n"拣选生命。"\n\n但你知道。你知道自己的心。你知道你活不出这个选择。你不是没有意愿——你是没有力量。\n\n然后摩西像知道你心里在想什么一样——\n\n"耶和华你的神必将你心里和你后裔心里的污秽除掉——好叫你尽心尽性爱耶和华你的神，使你可以存活。"\n\n先除掉——然后才能尽心。\n\n不是"你努力选"。是"神先动手术"。\n\n他要把你们的心——那颗拜过偶像、抱怨过旷野、不信过应许的心——割开。不是惩罚。是医治。\n\n摩西站直了。天色暗下来。\n\n"拣选生命。"',
+  choices: [
+    { text: '我想拣选生命——但我不觉得自己有力量选。', cons: '你闭上眼睛。你想选。你真心想选。但你知道自己的心——它像一匹野马，不是缰绳勒得住的。你以为这就意味着你不够格。但摩西说的不是"你努力"——是"神必除掉"。不是你攥紧拳头。是有人先松开你的手指。你睁开眼睛。天上的第一颗星出来了。你不知道怎么做到的——但你信了。不是信自己。是信那位说"我必将你心里污秽除掉"的。', verse: '申命记 30:6 — 耶和华你神必将你心里和你后裔心里的污秽除掉，好叫你尽心尽性爱耶和华你的神，使你可以存活。', next: 's8_1' },
+    { text: '生命必须先拣选我——我才能拣选生命。', cons: '这句话不是你想出来的——是冲进你脑子的。像一个很久以前被忽略的事实突然被举到你眼前。\n\n摩西说"拣选生命"。但当你追查"凭什么我还能拣选"的时候——你追到了申命记7:7。"耶和华专爱你们"——没有什么原因。就是爱。就是拣选。不是你先伸手——是他。\n\n你站在摩押平原的暮色里。摩西的两座山在无言地耸立。你望向基利心——祝福之山。不是因为你配站在它的阴影下。是被邀请站进来的。\n\n你低下头。不是沮丧。是领受。', verse: '申命记 30:19 — 我今日呼天唤地向你作见证。我将生死祸福陈明在你面前，所以你要拣选生命，使你和你的后裔都得存活。', next: 's8_1' }
+  ]
+},
+
+s8_1: {
+  ch:8, chName:'第八章 · 摩西的歌', prog:0.84, effect:'embers',
+  narrative: '篝火升起来了。摩押平原的夜晚很冷。\n\n摩西开口唱歌。一百二十岁——站在全营面前，不用鼓，不用琴。只有他的声音。\n\n"诸天哪，侧耳——我要说话。愿地也听我口中的言语。"\n\n这是一首很长的歌。一首很暗的歌。\n\n"你轻忽生你的磐石，忘记产你的神。"\n\n摩西唱到这句的时候，声音不愤怒。是悲伤的。他知道你们会忘记。不是可能——是一定。他说"我知道我死后——你们必全然败坏，偏离我所吩咐你们的道。"\n\n但他还在唱。\n\n唱到后面——歌突然转了调。\n\n"你们外邦人——当与主的百姓一同欢呼。"\n\n摩西的眼睛亮了。他看见了什么。他看不见名字，但他看见了一个轮廓——比约旦河对岸更远的轮廓。外邦人——不是选民——被叫来一起欢呼。\n\n他不知道自己引用的是保罗在罗马书第十五章的解释。他只知道——在死亡的那一边，有一个更大的聚集正在被预备。\n\n摩西唱完最后一句。篝火噼啪响了一声。没有人说话。',
+  choices: [
+    { text: '……听他唱完。不说一个字。', cons: '你不能说话。不是感动——是从头到脚被拆开了。\n\n摩西知道他死后你们会背叛。但他还是唱完了。他知道他的一切劳苦会在你们手里变成偶像崇拜，但他还是站在这里——在摩押平原的冷夜里，用一百二十岁的声音唱一首没人会记住的歌。\n\n然后他唱到外邦人。唱到欢呼。\n\n你不知道那个从拿撒勒来的拉比的名字。但摩西看见了——他看见有一天，不是只有以色列人在神的家里。埃及人。亚述人。中国人。美国人。\n\n"欢呼"——不是审判。\n\n你站起来。风吹干了脸上的湿痕。', verse: '申命记 32:43 — 你们外邦人，当与主的百姓一同欢呼。 罗马书 15:10 — 又说：你们外邦人，当与主的百姓一同欢乐。', next: 's9_1' }
+  ]
+},
+
+s9_1: {
+  ch:9, chName:'第九章 · 尼波山', prog:0.96, effect:null,
+  narrative: '摩西从摩押平原登尼波山，上了那与耶利哥相对的毗斯迦山顶。\n\n他一个人上去的。\n\n耶和华将全地指给他看——基列全地直到但，拿弗他利全地，以法莲、玛拿西的地，犹大全地直到西海，南地，和棕树城耶利哥的平原，直到琐珥。\n\n全地。都在他眼前。\n\n耶和华对他说——\n\n"这就是我向亚伯拉罕、以撒、雅各起誓应许之地。我必不将你领进那地。我使你眼睛看见了——你却不得过到那里去。"\n\n于是，耶和华的仆人摩西死在摩押地，正如耶和华所说的。\n\n耶和华将他埋葬在摩押地——伯毗珥对面的谷中。只是到今日，没有人知道他的坟墓。\n\n摩西死的时候年一百二十岁。眼目没有昏花，精神没有衰败。\n\n以色列人在摩押平原为摩西哀哭了三十日。\n\n约书亚——因为摩西曾按手在他头上——就被智慧的灵充满。以色列人便听从他，照着耶和华吩咐摩西的行了。\n\n从此以后。沉默。\n\n很久。',
+  choices: [
+    { text: '站在尼波山脚下。往上看。他一个人在上面。', cons: '你不知道上面正在发生什么。\n\n一百二十年前，一个希伯来男婴被放进蒲草箱，推进了尼罗河。一百二十年后，同一个人的尸体被耶和华亲手埋在摩押谷中。没有人知道他埋在哪里。\n\n为什么不让以色列人知道他的坟墓？\n\n也许——你知道——是因为神知道人心。如果以色列人知道摩西埋在哪里，他们早晚会拜那个坟墓。就像他们拜铜蛇一样。神把摩西藏起来——不是不尊重他。是保护他。\n\n但他的歌还在你耳朵里回响。那首歌结束了——但最后一句没有落地。\n\n"你们外邦人，当与主的百姓一同欢呼。"\n\n还悬在空中。等着被应验。', verse: '申命记 34:5-6 — 于是耶和华的仆人摩西死在摩押地，正如耶和华所说的。耶和华将他埋葬在摩押地、伯毗珥对面的谷中，只是到今日没有人知道他的坟墓。', next: 'ending' }
+  ]
 }
+},
+    chapters: [
+      { id:1, title:'摩押平原', start:'s1_1' },
+      { id:2, title:'从何烈山到加低斯', start:'s2_1' },
+      { id:3, title:'旷野四十年', start:'s3_1' },
+      { id:4, title:'十诫重申', start:'s4_1' },
+      { id:5, title:'Shema与尽心', start:'s5_1' },
+      { id:6, title:'迦南地的试探', start:'s6_1' },
+      { id:7, title:'祝福与咒诅', start:'s7_1' },
+      { id:8, title:'摩西的歌', start:'s8_1' },
+      { id:9, title:'尼波山', start:'s9_1' }
+    ],
+    imgMap: { 1:null, 2:null, 3:null, 4:null, 5:null, 6:null, 7:null, 8:null, 9:null },
+    bgmMap: {
+      'violin': [1,2,3,4],
+      'love': [5,6,7,8,9,'postscript']
+    }
+  }
 
 };
 
@@ -2703,6 +2870,7 @@ const ACHIEVEMENTS = {
   exodus_finished: { name:'过红海的人', icon:'🌊', desc:'通关出埃及奇旅' },
   wilderness_finished: { name:'尼波山上', icon:'🏔️', desc:'通关旷野奇旅' },
   leviticus_finished: { name:'棚中望天', icon:'🍃', desc:'通关利未奇旅' },
+  deuteronomy_finished: { name:'摩押平原', icon:'📜', desc:'通关申命奇旅' },
   /* 旷野奇旅专属 */
   wilderness_stations: { name:'旷野行者', icon:'🏕️', desc:'到访全部20个站点' },
   wilderness_no_complain: { name:'不抱怨', icon:'🙏', desc:'选完每章所有选项再前进' },
@@ -2711,6 +2879,7 @@ const ACHIEVEMENTS = {
   verse_collector: { name:'把话藏在心里', icon:'📖', desc:'收集任意一卷全部经文' },
   /* 终极 */
   trilogy_complete: { name:'三卷全书', icon:'📚', desc:'通关旅人系列全部三卷' },
+  pentateuch_complete: { name:'摩西五经', icon:'📜', desc:'通关全部五卷旅人系列' },
   all_achievements: { name:'全图鉴', icon:'🎯', desc:'解锁全部成就' }
 };
 function unlockAchievement(id) {
@@ -3131,9 +3300,9 @@ let bgmOn = false;
 let currentBGM = '';
 function getBGMForChapter(ch) {
   for (const [key, chapters] of Object.entries(currentBook.bgmMap)) {
-    if (chapters.includes(ch)) return 'media/bgm_' + key + '.mp3';
+    if (chapters.includes(ch)) return '圣约之家_media/bgm_' + key + '.mp3';
   }
-  return 'media/bgm_violin.mp3'; // default
+  return '圣约之家_media/bgm_violin.mp3'; // default
 }
 
 function switchBGM(src) {
@@ -3175,9 +3344,101 @@ function updateBGMBtn() {
   b.innerHTML = bgmOn ? '<span class="bgm-icon">🔊</span>BGM' : '<span class="bgm-icon">🔇</span>BGM';
 }
 
+/* ═══ Deuteronomy Postscript ═══ */
+function renderDeuteronomyPostscript() {
+  stopBGM();
+  const postscriptScreens = [
+    {
+      text: '耶和华你的神要在你们弟兄中间给你们兴起一位先知像我，你们要听从他。',
+      ref: '申命记 18:15',
+      label: '摩西的应许'
+    },
+    {
+      text: '以后以色列中再没有兴起先知像摩西的，他是耶和华面对面所认识的。',
+      ref: '申命记 34:10',
+      label: '等待开始'
+    },
+    {
+      text: '等了。等了一年。等了十年。等了一百年。士师没有。列王没有。先知没有。摩西说的话——还没兑现。',
+      ref: '',
+      isWait: true
+    },
+    {
+      text: '摩西曾说：“主神要从你们弟兄中间给你们兴起一位先知像我，凡他向你们所说的，你们都要听从。”',
+      ref: '使徒行传 3:22',
+      label: '彼得在圣殿门口——引用摩西的话，一字不差'
+    },
+    {
+      text: '摩西为仆人，在神的全家诚然尽忠，为要证明将来必传说的事。但基督为儿子，治理神的家。',
+      ref: '希伯来书 3:5-6',
+      isFinal: true
+    }
+  ];
+  let screenIndex = 0;
+
+  function renderScreen() {
+    const s = postscriptScreens[screenIndex];
+    let html = '<div class="ps-screen">';
+    if (s.label) {
+      html += '<div style="font-size:11px;color:#8a7040;letter-spacing:0.18em;margin-bottom:16px;font-family:var(--font-display);opacity:0;animation:psFadeIn 0.8s ease 0.2s forwards">' + s.label + '</div>';
+    }
+    if (s.isWait) {
+      html += '<div class="ps-wait">' + s.text + '</div>';
+    } else if (s.isFinal) {
+      html += '<div class="ps-text">' + s.text + '</div>';
+      html += '<div class="ps-ref">' + s.ref + '</div>';
+    } else {
+      html += '<div class="ps-text">' + s.text + '</div>';
+      if (s.ref) html += '<div class="ps-ref">—— ' + s.ref + '</div>';
+    }
+    if (screenIndex < postscriptScreens.length - 1) {
+      html += '<div class="ps-dot">◆</div>';
+      html += '<div style="font-size:11px;color:#8a7040;margin-top:12px;opacity:0.5;position:relative;z-index:1">点击继续</div>';
+    } else {
+      html += '<div class="ps-final">以后以色列中再没有兴起先知像摩西的。<small>直到他来了。</small></div>';
+      html += '<div style="margin-top:36px;position:relative;z-index:1"><button class="continue-btn" id="psFinishBtn">结束旅程</button></div>';
+    }
+    html += '</div>';
+    container.innerHTML = html;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  container.addEventListener('click', function psClick(e) {
+    if (e.target.closest('#psFinishBtn')) {
+      container.removeEventListener('click', psClick);
+      // Show minimal ending summary
+      let html = '<div class="ending-screen">';
+      html += '<div class="end-icon">✜</div>';
+      html += '<div class="deco-line"></div>';
+      html += '<h2>旅程暂告一段落</h2>';
+      html += '<div class="end-text">摩押平原上，摩西说完了。<br>尼波山顶，耶和华亲自埋葬了他。<br>没有人知道他的坟墓。<br><br>但他的话没有死。<br>“耶和华你的神要在你们中间<br>兴起一位先知像我。”<br><br>等了一千五百年。<br>拿撒勒人耶稣去世上，<br>“你们如果信摩西，<br>也必信我，<br>因为他书上有指着我写的话。”</div>';
+      html += '<div class="scripture-box" style="text-align:center"><div class="scripture-ref">申命记 34:10 — 以后以色列中再没有兴起先知像摩西的。<br>约翰福音 5:46 — 你们如果信摩西，也必信我，因为他书上有指着我写的话。</div></div>';
+      html += '</div>';
+      html += '<button class="connection-btn" style="background:var(--btn-bg);color:var(--gold);border:1px solid var(--border-active);font-weight:400;margin:0 auto;display:block" onclick="renderBookSelect()">返回扉页</button>';
+      container.innerHTML = html;
+      
+      // Unlock achievements for deuteronomy
+      unlockAchievement('finished');
+      unlockAchievement('deuteronomy_finished');
+      if (hasAchievement('genesis_finished') && hasAchievement('exodus_finished') && hasAchievement('wilderness_finished') && hasAchievement('leviticus_finished')) {
+        unlockAchievement('pentateuch_complete');
+      }
+      if (!gameState.loadedFromSave) unlockAchievement('no_save');
+      const uniqueScenes = new Set(gameState.sceneHistory.map(h => h.scene));
+      if (uniqueScenes.size >= 9) unlockAchievement('explorer');
+      return;
+    }
+    screenIndex++;
+    renderScreen();
+  });
+
+  renderScreen();
+}
+
 /* ═══ Ending ═══ */
 function renderEnding() {
   setEffect(null);
+  if (currentBook.id === 'deuteronomy') { renderDeuteronomyPostscript(); return; }
   // ── Calculate Player Title ──
   let playerTitle = { name: '信心的脚步', icon: '🕊️' };
   if (hasAchievement('speed_demon')) {
@@ -3212,6 +3473,7 @@ function renderEnding() {
   else if (currentBook.id === 'exodus') unlockAchievement('exodus_finished');
   else if (currentBook.id === 'wilderness') unlockAchievement('wilderness_finished');
   else if (currentBook.id === 'leviticus') unlockAchievement('leviticus_finished');
+  else if (currentBook.id === 'deuteronomy') unlockAchievement('deuteronomy_finished');
 
   // Trilogy complete
   if (hasAchievement('genesis_finished') && hasAchievement('exodus_finished') && hasAchievement('wilderness_finished')) {
@@ -3429,7 +3691,8 @@ function renderVerseGallery(filterBook) {
     genesis: '创世奇旅',
     exodus: '出埃及奇旅',
     wilderness: '旷野奇旅',
-    leviticus: '利未奇旅'
+    leviticus: '利未奇旅',
+    deuteronomy: '申命奇旅'
   };
 
   let html = '';
@@ -3440,7 +3703,7 @@ function renderVerseGallery(filterBook) {
   // Tabs
   html += '<div class="gallery-tabs">';
   const tabs = [{id:'all',label:'全部'}];
-  for (const bid of ['genesis','exodus','wilderness','leviticus']) {
+  for (const bid of ['genesis','exodus','wilderness','leviticus','deuteronomy']) {
     tabs.push({id:bid,label:bookLabels[bid]});
   }
   for (const t of tabs) {
@@ -3551,7 +3814,7 @@ document.addEventListener('keydown', e => {
 </script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('media/sw.js').catch(() => {});
+  navigator.serviceWorker.register('圣约之家_media/sw.js').catch(() => {});
 }
 </script>
 </body>
